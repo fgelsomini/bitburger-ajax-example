@@ -1,0 +1,44 @@
+
+<h3>Cashier 1</h3>
+<div class="order" id="john"></div>
+<p>
+  <%= link_to "Take Order for John (6 Items)", take_order_orders_path(:items => 6), :class => "take-order-button", :data => {:name => "john"} %>
+</p>
+
+<h3>Cashier 2</h3>
+<div class="order" id="jane"></div>
+<p>
+  <%= link_to "Take Order for Jane (1 Item)", take_order_orders_path(:items => 1), :class => "take-order-button", :data => {:name => "jane"} %>
+</p>
+
+<h3>Cashier 3</h3>
+<div class="order" id="sally"></div>
+<p>
+  <%= link_to "Take Order for Sally (4 Items)", take_order_orders_path(:items => 4), :class => "take-order-button", :data => {:name => "sally"} %>
+</p>
+
+
+<script>
+
+  $(document).ready(function() {
+
+    // Set up an event listener to take orders
+    $('.take-order-button').on('click', function(e) {
+      // Prevent link from doing its usual thing
+      e.preventDefault();
+      // Take note of the customer's name
+      var customerName = $(this).attr("data-name");
+      // Update status to show we have sent the order to a cook
+      $('#' + customerName).html("<em>Sent to cook...</em>");
+      // Send order to a cook and keep track of the name so we can update them when done
+      // We will use the original link's href as the target for the ajax request
+      $.ajax({
+        url: $(this).attr("href")
+      }).done(function() {
+        $('#' + customerName).html("<em>Ding Ding. Order Up!!</em>");
+      });
+    });
+
+  });
+
+</script>
