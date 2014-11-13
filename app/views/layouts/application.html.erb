@@ -10,6 +10,11 @@
 
   <h1>Welcome to BitBurger</h1>
 
+  <p>IMPORTANT NOTE - if we run the default Rails server (Webrick), BitBurger will only have 1 cook to take our orders (it can only process 1 request at at time).</p>
+  <p>To employ more than 1 cook to process orders at the same time, we will need to run something that supports concurrent requests as our server. A popular production option for Rails that fits this description would be Unicorn.</p>
+
+  <p>For our example, each item in an order will take 1 second to cook. Orders with more items will naturally take longer to complete.</p>
+
   <%= yield %>
 
 </body>

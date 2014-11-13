@@ -1,28 +1,16 @@
-== README
+== BITBURGER AJAX EXAMPLE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+One of the big advantages of AJAX is the ability to make <em>asynchronous</em> requests. What does that really mean? In order to answer that, let's try to identify the differences between synchronous vs asynchronous requests using a fast-food restaurant as an example.
 
-Things you may want to cover:
+==== Synchronous Fast Food Model
 
-* Ruby version
+Let's say the restaurant in question has employed 3 workers. The workers in this model will be responsible for taking AND fulfilling the order (i.e. they need to cook the food, assemble the items and give them back to the customer). Obviously, this could end up being a pretty slow process, and if the restaurant suddenly became busy, the next person in line would be blocked until the previous person's order was completed.
 
-* System dependencies
+==== Asynchrounous Fast Food Model
 
-* Configuration
+In this model, the staff at our fast food restaurant will be structured a bit differently. Instead of 3 workers responsible for everything, the tasks will now be delegated. There will be only 1 cashier, who's sole responsibility is to take the order, and attach a customer name to an order before sending it to the cooks. The other 2 workers will be responsible for cooking the food, and assembling the order to give to the customer.
 
-* Database creation
+Notice that with the same amount of workers, the restaurant can now process orders in a different (and likely more efficient) manner. Similar items can be cooked together or in bulk, small orders can be fulfilled while other food is being cooked, etc etc. The cooks always know who to look for when they are done because they are told who to contact when the orders are up.
 
-* Database initialization
+The asyncrounous model above is how AJAX (and much of Javascript code) handles things.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
