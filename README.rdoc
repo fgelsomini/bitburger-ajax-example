@@ -12,5 +12,5 @@ In this model, the staff at our fast food restaurant will be structured a bit di
 
 Notice that with the same amount of workers, the restaurant can now process orders in a different (and likely more efficient) manner. Similar items can be cooked together or in bulk, small orders can be fulfilled while other food is being cooked, etc etc. The cooks always know who to look for when they are done because they are told who to contact when the orders are up.
 
-The asyncrounous model above is how AJAX (and much of Javascript code) handles things.
+The asynchronous model above is how AJAX (and much of Javascript code) handles things.
 
